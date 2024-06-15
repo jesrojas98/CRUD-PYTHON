@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<div style="text-align: center;">
-    <h2>Formulario Agregar Alumnos</h2>
-    <form action="alumnosAdd" method="POST">
+    <div style="text-align: center;">
+        <h2>Formulario Agregar Alumnos</h2>
+        <form action="" method="post">
             {% csrf_token %}
-            <pre>Rut: <input type="text" name="rut"></pre>
-            <pre>Nombre: <input type="text" name="nombre"></pre>
-            <pre>Apellido P.: <input type="text" name="paterno"></pre>
-            <pre>Apellido M.: <input type="text" name="materno"></pre>
-            <pre>Fecha Nac: <input type="date" name="fechaNac"></pre>
-            <pre>Celular: <input type="text" name="telefono"></pre>
-            <pre>Email: <input type="mail" name="email"></pre>
-            <pre>Direccion: <input type="text" name="direccion"></pre>
-            
-            <input type="submit" name="opcion" value="Agregar">
-            </form> <br><br>
-            <a href="{% url 'listar' %}">Volver</a>
+            <label for="">Rut:</label>
             <br>
-            <div id="idMensajes">
-                {% if mensaje %}
-                    {{mensaje}}
-                {% endif %}    
-            </div>
-            </div>
-
-
-
+            <input type="text" name="rut">
+            <br>
+            <label for="">Nombre:</label>
+            <br>
+            <input type="text" name="nombrealumno">
+            <br>
+            <label for="">Apellido Paterno:</label>
+            <br>
+            <input type="text" name="paterno">
+            <br>
+            <label for="">Apellido Materno:</label>
+            <br>
+            <input type="text" name="materno">
+            <br>
+            <label for="">Fecha Nacimiento:</label>
+            <br>
+            <input type="date" name="fechaNac">
+            <br>
+            <label for="">Celular:</label>
+            <br>
+            <input type="text" name="telefono">
+            <br>
+            <label for="">Email:</label>
+            <br>
+            <input type="mail" name="email">
+            <br>
+            <label for="">Direccion:</label>
+            <br>
+            <input type="text" name="direccion">
+            <br>
+            <button type="submit">Agregar</button>
+        </form>
+        <br>
+        <br>
+        <a href="{% url 'listar' %}">Volver</a>
+        <br>
+    </div>
 </body>
 </html>
