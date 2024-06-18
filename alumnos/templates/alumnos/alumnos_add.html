@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<div style="text-align: center;">
-    <h2>Formulario Agregar Alumnos</h2>
-    <form action="alumnosAdd" method="POST">
+    <div style="text-align: center;">
+        <h2>Formulario Agregar Alumnos</h2>
+        <form action="" method="post">
             {% csrf_token %}
-            <pre>Rut: <input type="text" name="rut"></pre>
-            <pre>Nombre: <input type="text" name="nombre"></pre>
-            <pre>Apellido P.: <input type="text" name="paterno"></pre>
-            <pre>Apellido M.: <input type="text" name="materno"></pre>
-            <pre>Fecha Nac: <input type="date" name="fechaNac"></pre>
-            <pre>Celular: <input type="text" name="telefono"></pre>
-            <pre>Email: <input type="mail" name="email"></pre>
-            <pre>Direccion: <input type="text" name="direccion"></pre>
-            
-            <input type="submit" name="opcion" value="Agregar">
-            </form> <br><br>
-            <a href="{% url 'listar' %}">Volver</a>
-            <br>
-            <div id="idMensajes">
-                {% if mensaje %}
-                    {{mensaje}}
-                {% endif %}    
-            </div>
-            </div>
-
-
-
+            {{ form.as_table }}
+            <button type="submit">Agregar</button>
+        </form>
+        <br>
+        <br>
+        <a href="{% url 'listar' %}">Volver</a>
+        <br>
+    </div>
 </body>
 </html>

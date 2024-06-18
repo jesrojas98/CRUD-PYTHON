@@ -7,25 +7,49 @@
 </head>
 <body>
     <div style="text-align: center;">
-        {% if alumno %}
+    {% if alumno %}
         <h2>Formulario Actualizar Datos Alumnos</h2>
-        <form action="{% url 'alumnosUpdate' %}"  method="'POST">
+        <form action="{% url 'alumnosUpdate' %}" method="post">
             {% csrf_token %}
-            <pre>Rut: <input type="text" name="rut" value="{{alumno.rut}}"></pre>
-            <pre>Nombre: <input type="text" name="nombre" value="{{alumno.nombre}}"></pre>
-            <pre>Apellido P.: <input type="text" name="paterno" value="{{alumno.apellido_paterno}}"></pre>
-            <pre>Apellido M.: <input type="text" name="materno" value="{{alumno.apellido_materno}}"></pre>
-            <pre>Fecha Nac: <input type="date" name="fechaNac" value="{{alumno.fecha_nacimiento|date:'Y-m-d'}}"></pre>
-            <pre>Celular: <input type="text" name="telefono" value="{{alumno.telefono}}"></pre>
-            <pre>Email: <input type="mail" name="email" value="{{alumno.email}}"></pre>
-            <pre>Direccion: <input type="text" name="direccion" value="{{alumno.direccion}}"></pre>
+            <label for="">Rut:</label>
+            <br>
+            <input type="text" name="rut" value="{{alumno.rut}}">
+            <br>
+            <label for="">Nombre:</label>
+            <br>
+            <input type="text" name="nombrealumno" value="{{alumno.nombre}}">
+            <br>
+            <label for="">Apellido Paterno:</label>
+            <br>
+            <input type="text" name="paterno" value="{{alumno.apellido_paterno}}">
+            <br>
+            <label for="">Apellido Materno:</label>
+            <br>
+            <input type="text" name="materno" value="{{alumno.apellido_materno}}">
+            <br>
+            <label for="">Fecha Nacimiento:</label>
+            <br>
+            <input type="date" name="fechaNac" value="{{alumno.fecha_nacimiento|date:'Y-m-d'}}">
+            <br>
+            <label for="">Celular:</label>
+            <br>
+            <input type="text" name="telefono" value="{{alumno.telefono}}">
+            <br>
+            <label for="">Email:</label>
+            <br>
+            <input type="mail" name="email" value="{{alumno.email}}">
+            <br>
+            <label for="">Direccion:</label>
+            <br>
+            <input type="text" name="direccion" value="{{alumno.direccion}}">
+            <br>
             
-            <input type="submit" name="opcion" value="Actualizar">
+            <button type="submit" >Actualizar</button>
             </form> <br><br>
-            {% endif %}
+    {% endif %}
             <div id="idMensajes">
                 {% if mensaje %}
-                    {{mensaje}}
+                {{mensaje}}
                 {% endif %}    
             </div><br><br>
             <a href="{% url 'listar' %}">Volver</a>
