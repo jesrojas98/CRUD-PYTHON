@@ -106,4 +106,6 @@ def alumnosUpdate (request):
         alumnos=Alumno.objects.all()
         context={'mensaje':'Error: Rut no existe...'}
         return render(request, 'alumnos/alumnos_edit.html', context)
+    
+    
         

@@ -11,7 +11,7 @@
         <h2>Formulario Actualizar Datos Alumnos</h2>
         <form action="{% url 'alumnosUpdate' %}" method="post">
             {% csrf_token %}
-            <label for="">Rut:</label>
+            <label style="color: aqua;" for="">Rut:</label>
             <br>
             <input type="text" name="rut" value="{{alumno.rut}}">
             <br>
